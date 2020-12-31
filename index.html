@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Задание 1 Image. Отзывчивое фоновое изображение. -->
+    <div class="card"></div>
+    <!-- Задание 2 Отзывчивый элемент img: srcset и дескриптор x. -->
+    <img src="./images/source@1x.jpg" alt="Описание изображения для всех версий"
+        srcset="./images/source@1.5x.jpg 1.5x,./images/source@2x.jpg 2x,./images/source@3x.jpg 3x">
+    <!-- Задание 3 Отзывчивый элемент img: srcset и дескриптор w. -->
+    <img alt="Текстовое описание изображения для всех версий" src="./images/source.jpg" srcset="./images/source-360.jpg 360w, ./images/source-540.jpg 540w,
+              ./images/source-720.jpg 720w, ./images/source-1080.jpg 1080w,
+              ./images/source-1440.jpg 1440w">
+    <!-- Задание 4 Отзывчивый элемент img: sizes -->
+    <figure class="image-wrapper">
+        <img class="image" alt="Текстовое описание изображения для всех версий" src="./images/source.jpg" srcset="./images/source-360.jpg 360w,
+              ./images/source-540.jpg 540w,
+              ./images/source-720.jpg 720w,
+              ./images/source-1080.jpg 1080w,
+              ./images/source-1440.jpg 1440w" sizes="(max-width: 549px) calc(100vw - 10px),
+             (max-width: 959px) calc(50vw - 20px),
+             (min-width: 960px) calc(70vw - 20px)">
+        <figcaption class="image-description">
+            Подробное описание изображения.
+        </figcaption>
+    </figure>
+    <!-- Задание 5 Отзывчивое изображение: элемент picture. -->
+    <picture>
+        <source media="screen and (orientation: portrait) and (max-width: 549px)" srcset="./images/source-vertical.jpg,
+              ./images/source-vertical_2x.jpg 2x">
+        <source media="screen and (min-width: 550px)" srcset="./images/source-horizontal.jpg,
+              ./images/source-horizontal_2x.jpg 2x">
+        <source media="screen and (orientation: landscape)" srcset="./images/source-horizontal.jpg,
+              ./images/source-horizontal_2x.jpg 2x">
+        <img src="/images/source.jpg" alt="Текстовое описание изображения">
+    </picture>
+
+</body>
+</html>

@@ -1,0 +1,111 @@
+/* Задание 1 Image. Отзывчивое фоновое изображение. */
+/* 1x - значение по умолчанию, изображение 360x220 */
+.card {
+  width: 324px;
+  height: 198px;
+  margin: 1rem auto;
+  box-shadow: 20px 10px 20px hsla(0, 0%, 0%, 0.5);
+  background-image: url('./images/bg@1x.jpg'), linear-gradient(#eee, #888);
+  background-size: cover;
+}
+
+/* 2x-экраны, изображение 720x440 */
+@media screen and (min-device-pixel-ratio: 2),
+  screen and (min-resolution: 192dpi),
+  screen and (min-resolution: 2dppx) {
+  .card {
+    background-image: url('./images/bg@2x.jpg'), linear-gradient(#eee, #888);
+  }
+}
+
+/* 3x-экраны, изображение 1080x660 */
+@media screen and (min-device-pixel-ratio: 3),
+  screen and (min-resolution: 288dpi),
+  screen and (min-resolution: 3dppx) {
+  .card {
+    background-image: url('./images/bg@3x.jpg'), linear-gradient(#eee, #888);
+  }
+}
+
+/* Задание 2 Отзывчивый элемент img: srcset и дескриптор x. */
+img {
+  width: 720px;
+  display: block;
+  margin: 1rem auto;
+  box-shadow: 2px 2px 2px 2px hsla(0, 0%, 0%, 0.2);
+}
+
+/* Задание 3 Отзывчивый элемент img: srcset и дескриптор w. */
+img {
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  margin: 1rem auto;
+  box-shadow: 2px 2px 2px 2px hsla(0, 0%, 0%, 0.2);
+}
+
+@media screen and (min-width: 540px) {
+  img {
+    max-width: 540px;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  img {
+    max-width: 720px;
+  }
+}
+
+/* Задание 4 Отзывчивый элемент img: sizes */
+.image-wrapper {
+  margin: 5px;
+  box-shadow: 2px 2px 2px 2px hsla(0, 0%, 0%, 0.2);
+}
+.image {
+  display: block;
+  width: 100%;
+  border: 1px solid gold;
+}
+
+.image-description {
+  padding: 1rem;
+  border: 1px solid gold;
+}
+
+@media screen and (min-width: 540px) {
+  .image-wrapper {
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .image-description,
+  .image {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .image-description {
+    width: 30%;
+  }
+  .image {
+    width: 70%;
+  }
+}
+
+/* Задание 5 Отзывчивое изображение: элемент picture. */
+body {
+  padding: 1rem;
+}
+
+img {
+  display: block;
+  width: 100%;
+  margin: auto;
+}
+
+@media screen and (min-width: 550px) {
+  img {
+    max-width: 550px;
+  }
+}
